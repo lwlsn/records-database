@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+	 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<link rel="stylesheet" href="style.css"> 
+	<title>
+		Firebase tutorial
+	</title>
+</head>
+<body>
+	<h1> Music Records Example Database</h1>
+
+	
+	<div class="content" >
+		<p> Please add to this database if you wanna</p>
+		<form id="add-record-form"></form>
+		<ul id="record-list"> </ul>
+
+	</div>
+
+
+
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    //add api key here
+	    authDomain: "fir-tutorial-database.firebaseapp.com",
+	    databaseURL: "https://fir-tutorial-database.firebaseio.com",
+	    projectId: "fir-tutorial-database",
+	    storageBucket: "fir-tutorial-database.appspot.com",
+	    messagingSenderId: "831076741246",
+	    appId: "1:831076741246:web:c533cb86451f941ef8282f"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  const db = firebase.firestore();
+	//   db.settings({timestampsInSnapshots: true});
+	</script>
+
+	<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
