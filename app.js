@@ -47,7 +47,7 @@ db.collection('records').get().then((snapshot)=> {
 
 
 // only get specific data from firebase
-// db.collection('records').where('album', '==', "Petrichor").get().then((snapshot)=> {
+// db.collection('records').where('artist', '==', "Ans M").orderBy('album').get().then((snapshot)=> {
 //     snapshot.docs.forEach(doc => {
 //         console.log(doc.data());
 //          renderRecord(doc);
@@ -69,4 +69,19 @@ form.addEventListener('submit', (evt) => {
     form.link.value= '';
 })
 
+
+
+//real-time data listener 
+db.collection('records').orderBy('artist').onSnapshot(snapshot => {
+    let changes = snapshot.docChanges();
+    // console.log(changes);
+    changes.forEach(change  => {
+        if (change.type == 'added') { // if entry is added, then list in the database
+            renderRecord(change.doc);
+        }
+        else if (change.type == 'removed') { // when id of removed matches that of the database, remove 
+            let li = recordList.querySelector('[data-id=' + change.doc.id + ']');
+        }
+    })
+})
 
