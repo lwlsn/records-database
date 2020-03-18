@@ -19,7 +19,14 @@
 	
 	<div class="content" >
 		<p> Please add to this database if you wanna</p>
-		<form id="add-record-form"></form>
+		<form id="add-record-form">
+			<input type="text" name="album" placeholder="Album Name">
+			<input type="text" name="artist" placeholder="Artist Name">
+			<input type="text" name="link" placeholder= "Link ?">
+
+			<button>ADD LINK </button>
+
+		</form>
 		<ul id="record-list"> </ul>
 
 	</div>
@@ -29,7 +36,7 @@
 	<script>
 	  // Your web app's Firebase configuration
 	  var firebaseConfig = {
-	    //add api key here
+	    
 	    authDomain: "fir-tutorial-database.firebaseapp.com",
 	    databaseURL: "https://fir-tutorial-database.firebaseio.com",
 	    projectId: "fir-tutorial-database",
