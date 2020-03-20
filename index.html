@@ -9,6 +9,9 @@
 	<!-- TODO: Add SDKs for Firebase products that you want to use
 	 https://firebase.google.com/docs/web/setup#available-libraries -->
 	<link rel="stylesheet" href="style.css"> 
+
+	<!-- include config file -->
+	<script type='text/javascript' src='config.js'></script>
 	<title>
 		Firebase tutorial
 	</title>
@@ -36,7 +39,7 @@
 	<script>
 	  // Your web app's Firebase configuration
 	  var firebaseConfig = {
-	    
+		apiKey: config.apiKey;
 	    authDomain: "fir-tutorial-database.firebaseapp.com",
 	    databaseURL: "https://fir-tutorial-database.firebaseio.com",
 	    projectId: "fir-tutorial-database",

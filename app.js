@@ -38,12 +38,12 @@ function renderRecord(doc) {
 }
 
 // get data from firebase
-db.collection('records').get().then((snapshot)=> {
-   snapshot.docs.forEach(doc => {
-       console.log(doc.data());
-        renderRecord(doc);
-   })
-}); 
+// db.collection('records').get().then((snapshot)=> {
+//    snapshot.docs.forEach(doc => {
+//        console.log(doc.data());
+//         renderRecord(doc);
+//    })
+// }); 
 
 
 // only get specific data from firebase
@@ -81,6 +81,7 @@ db.collection('records').orderBy('artist').onSnapshot(snapshot => {
         }
         else if (change.type == 'removed') { // when id of removed matches that of the database, remove 
             let li = recordList.querySelector('[data-id=' + change.doc.id + ']');
+            recordList.removeChild(li);
         }
     })
 })
